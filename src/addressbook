@@ -28,6 +28,10 @@ mysql> show databases;
 
 mysql> use addressbook;
 Database changed
+-------------------------------------------------------
+
+#UC2
+
 mysql> create table contacts(
     -> id int auto_increment primary key,
     -> first_name varchar (20) not null,
@@ -56,6 +60,10 @@ mysql> desc contacts;
 +--------------+--------------+------+-----+---------+----------------+
 9 rows in set (0.30 sec)
 
+-------------------------------------------------------
+
+#UC3
+
 mysql> insert into contacts (first_name,last_name,address,city,state,zip,phone_number,email) values ("Anju","Chandran","anj1234","kochi","kerala","123456","90897","anju162@gmail.com");
 Query OK, 1 row affected (0.36 sec)
 
@@ -66,5 +74,22 @@ mysql> select * from contacts;
 |  1 | Anju       | Chandran  | anj1234 | kochi | kerala | 123456 |        90897 | anju162@gmail.com |
 +----+------------+-----------+---------+-------+--------+--------+--------------+-------------------+
 1 row in set (0.13 sec)
+
+
+===================================================
+#UC4
+#edit contact using first_name
+===================================================
+mysql> update contacts set phone_number="994662776" where first_name="Anju";
+Query OK, 1 row affected (0.20 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from contacts;
++----+------------+-----------+---------+-------+--------+--------+--------------+-------------------+
+| id | first_name | last_name | address | city  | state  | zip    | phone_number | email             |
++----+------------+-----------+---------+-------+--------+--------+--------------+-------------------+
+|  1 | Anju       | Chandran  | anj1234 | kochi | kerala | 123456 |    994662776 | anju162@gmail.com |
++----+------------+-----------+---------+-------+--------+--------+--------------+-------------------+
+1 row in set (0.00 sec)
 
 mysql>
