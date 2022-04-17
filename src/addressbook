@@ -123,3 +123,50 @@ mysql> select * from contacts;
 1 row in set (0.00 sec)
 
 mysql>
+=========================================================
+#UC7
+#Size of table by calculating size of city
+=========================================================
+
+mysql> insert into contacts(first_name,last_name,address,city,state,zip,phone_number,email) values("Messi","Lionel","aqw4","Barcelona","spain","234536","34586","messi@mail.com");
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into contacts(first_name,last_name,address,city,state,zip,phone_number,email) values("sachin","Tendulkar","aqwss4","mumbai","india","23233","334344586","sachinn@mail.com");
+Query OK, 1 row affected (0.19 sec)
+
+mysql> select * from contacts;
++----+------------+-----------+---------+-----------+--------+--------+--------------+-------------------+
+| id | first_name | last_name | address | city      | state  | zip    | phone_number | email             |
++----+------------+-----------+---------+-----------+--------+--------+--------------+-------------------+
+|  1 | Anju       | Chandran  | anj1234 | kochi     | kerala | 123456 |    994662776 | anju162@gmail.com |
+|  3 | Messi      | Lionel    | aqw4    | Barcelona | spain  | 234536 |        34586 | messi@mail.com    |
+|  4 | sachin     | Tendulkar | aqwss4  | mumbai    | india  |  23233 |    334344586 | sachinn@mail.com  |
++----+------------+-----------+---------+-----------+--------+--------+--------------+-------------------+
+3 rows in set (0.00 sec)
+
+mysql> select count(city) from contacts;
++-------------+
+| count(city) |
++-------------+
+|           3 |
++-------------+
+1 row in set (0.25 sec)
+
+=========================================================
+#UC8
+#sorted alphabetically by first_name for a given city
+=========================================================
+
+mysql> insert into contacts(first_name,last_name,address,city,state,zip,phone_number,email) values("Joy","Tribiyoni","as4","mumbai","india","23233","33456778","joyn@mail.com");
+Query OK, 1 row affected (0.22 sec)
+
+mysql> select * from contacts where city="mumbai" order by first_name asc;
++----+------------+-----------+---------+--------+-------+-------+--------------+------------------+
+| id | first_name | last_name | address | city   | state | zip   | phone_number | email            |
++----+------------+-----------+---------+--------+-------+-------+--------------+------------------+
+|  5 | Joy        | Tribiyoni | as4     | mumbai | india | 23233 |     33456778 | joyn@mail.com    |
+|  4 | sachin     | Tendulkar | aqwss4  | mumbai | india | 23233 |    334344586 | sachinn@mail.com |
++----+------------+-----------+---------+--------+-------+-------+--------------+------------------+
+2 rows in set (0.03 sec)
+
+mysql>
