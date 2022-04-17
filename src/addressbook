@@ -55,3 +55,16 @@ mysql> desc contacts;
 | email        | varchar(30)  | NO   |     | NULL    |                |
 +--------------+--------------+------+-----+---------+----------------+
 9 rows in set (0.30 sec)
+
+mysql> insert into contacts (first_name,last_name,address,city,state,zip,phone_number,email) values ("Anju","Chandran","anj1234","kochi","kerala","123456","90897","anju162@gmail.com");
+Query OK, 1 row affected (0.36 sec)
+
+mysql> select * from contacts;
++----+------------+-----------+---------+-------+--------+--------+--------------+-------------------+
+| id | first_name | last_name | address | city  | state  | zip    | phone_number | email             |
++----+------------+-----------+---------+-------+--------+--------+--------------+-------------------+
+|  1 | Anju       | Chandran  | anj1234 | kochi | kerala | 123456 |        90897 | anju162@gmail.com |
++----+------------+-----------+---------+-------+--------+--------+--------------+-------------------+
+1 row in set (0.13 sec)
+
+mysql>
